@@ -178,7 +178,7 @@ def download_and_process_zip(url, local_path, mode, extract_dir, output_csv, pro
             return
 
         set_status(status_label, f"Done! Saved to {output_csv}")
-        messagebox.showinfo("Done", f"CSV written to: {output_csv}")
+        root.after(0, lambda: messagebox.showinfo("Done", f"CSV written to: {output_csv}"))
         logging.info("=== Processing complete ===")
 
     except Exception as e:
@@ -232,7 +232,7 @@ def show_credits():
         "- lxml (BSD License)\n"
         "- tkinter (Python Standard Library)\n\n"
         "Developed by Oscar G.C. (Ozkr16) and Johan C.A.\n\n"
-        "\U0001FA75 The name 'Greatbatch' honors Wilson Greatbatch, "
+        "The name 'Greatbatch' honors Wilson Greatbatch, "
         "inventor of the implantable cardiac pacemaker."
     )
 
